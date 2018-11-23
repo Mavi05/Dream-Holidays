@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,800');
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.page {
+  witdh: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F1F1F1;
+  overflow: hidden;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, .4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menu {
+  width: 100%;
+  height: 10%;
+}
+
+.menu img {
+  margin-left: 25px;
+  margin-top: 25px;
+  width: 200px;
+  float: left;
+}
+
+i {
+  float: right;
+  font-size: 2em;
+  margin: 50px 40px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .text {
+  margin-bottom: 150px;
+}
+
+.text h1 {
+  font-size: 5em;
+  line-height: 0.5;
+}
+
+.text p {
+  color: rgb(0,0,0,0.5);
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+  margin-top: -5px;
+}
+
+.text a {
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  background-color: #fe864c;
+  transition: background-color 0.2s;
+  transition: color 0.2s;
+  padding: 10px 20px;
+  border: 2px solid #fe864c;
+}
+
+.text a:hover, .text a:active {
+  background-color: white;
+  color: #fe864c;
+}
+
+.photo {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../photos/home.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+/*------------------Floating Button----------------*/
+
+.float-button-container {
+  position: absolute;
+  left: 44%;
+  top:2.25%;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+}
+.open-button {
+  position: absolute;
+  background: #fe864c;
+  height: 90px;
+  width: 90px;
+  left:5px;
+  bottom: 0;
+  transform: scale(0.8, 0.8);
+  border-radius: 100px;
+  z-index: 999;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.open-button:before, .item01:before, .item02:before, .item03:before, .item04:before {
+  position: absolute;
+  font-family: "FontAwesome";
+  font-size: 3rem;
+  top: 50%;
+  left: 50%;
+  color: black;
+  transform: translate(-50%, -50%);
+}
+.open-button:before {
+  color: white;
+}
+.open-button:before {
+  content: "\f0c9";
+}
+.item01:before {
+  content: "\f013";
+}
+.item02:before {
+  content: "\f0f3";
+}
+.item03:before {
+  content: "\f002";
+}
+.item04:before {
+  content: "\f2c0";
+}
+.item01, .item02, .item03, .item04 {
+  position: absolute;
+  background: #fff;
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  top:10.5%;
+  transform: scale(0.4, 0.4);
+  transition: all 0.3s cubic-bezier(0.68, -0.15, 0.265, 1.15);
+}
+.item01:hover, .item02:hover, .item03:hover, .item04:hover {
+  background: #fe864c;
+}
+/*.float-button-container:hover {
+  top:1%;
+}*/
+.float-button-container:hover .open-button {
+  transform: scale(1, 1);
+}
+.float-button-container:hover .item01,
+.float-button-container:hover .item02,
+.float-button-container:hover .item03,
+.float-button-container:hover .item04 {
+  transform: scale(0.6, 0.6);
+}
+.float-button-container:hover .item01 {
+  top: 85px;
+}
+.float-button-container:hover .item02 {
+  top: 150px;
+}
+.float-button-container:hover .item03 {
+  top: 215px;
+}
+.float-button-container:hover .item04 {
+  top: 280px;
+}
+
+/*--------------Media Query--------------*/
+
+@media only screen and (max-width: 1200px) {
+.photo {
+  display: none;
+}
+.menu {
+  width: 100%;
+  height: 20%;
+}
+.menu img {
+  margin-left: 15px;
+  margin-top: 35px;
+  width: 250px;
+}
+i {
+  font-size: 5em;
+  margin: 50px 40px;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+.float-button-container {
+  position: absolute;
+  left:85%;
+  top:2.25%;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+}
+.content .text {
+  margin-bottom: 600px;
+}
+
+.text h1 {
+  font-size: 8em;
+  line-height: 0.5;
+}
+
+.text p {
+  color: rgb(0,0,0,0.5);
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  margin-top: -5px;
+}
+.text a {
+  font-weight: 600;
+  color: white;
+  font-size: 40px;
+  text-decoration: none;
+  background-color: #fe864c;
+  transition: background-color 0.2s;
+  transition: color 0.2s;
+  padding: 10px 20px;
+  border: 2px solid #fe864c;
+}
+
+.text a:hover, .text a:active {
+  background-color: white;
+  color: #fe864c;
+}
+}
